@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         animateNumber(
             "proteinValue",
-            18,
+            1409,
             1000
         );
 
