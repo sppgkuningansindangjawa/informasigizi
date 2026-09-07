@@ -1,1249 +1,2607 @@
 /* =========================================================
-   SPPG KUNINGAN SINDANGJAWA
-   Informasi Gizi Harian
-   Theme: Navy Blue + Light Blue + Gold
-   ========================================================= */
+SPPG KUNINGAN CIBINGBIN SINDANGJAWA
+INFORMASI GIZI HARIAN
+
+Theme:
+Navy Blue + Light Blue + Gold
+Responsive Mobile First
+========================================================= */
+
+/* =========================================================
+ROOT
+========================================================= */
 
 :root {
-    --navy: #08254d;
-    --navy-dark: #051a38;
-    --navy-light: #123b70;
 
-    --blue: #2d6fa8;
-    --blue-light: #a9d8e7;
-    --blue-soft: #eaf6fa;
 
-    --gold: #c99d50;
-    --gold-light: #e5c477;
+--navy: #08254d;
+--navy-dark: #051a38;
+--navy-light: #123b70;
 
-    --white: #ffffff;
-    --gray-50: #f7fafc;
-    --gray-100: #eef3f7;
-    --gray-200: #dce5ec;
-    --gray-400: #94a3b8;
-    --gray-500: #64748b;
-    --gray-600: #475569;
-    --gray-700: #334155;
+--blue: #2d6fa8;
+--blue-light: #a9d8e7;
+--blue-soft: #eaf6fa;
 
-    --green: #72b95b;
-    --orange: #f59e0b;
-    --red: #ef5350;
+--gold: #c99d50;
+--gold-light: #e5c477;
 
-    --shadow-sm: 0 4px 15px rgba(8, 37, 77, 0.08);
-    --shadow-md: 0 10px 30px rgba(8, 37, 77, 0.12);
-    --shadow-lg: 0 20px 50px rgba(8, 37, 77, 0.16);
+--white: #ffffff;
 
-    --radius-sm: 12px;
-    --radius-md: 18px;
-    --radius-lg: 24px;
+--gray-50: #f7fafc;
+--gray-100: #eef3f7;
+--gray-200: #dce5ec;
+--gray-400: #94a3b8;
+--gray-500: #64748b;
+--gray-600: #475569;
+--gray-700: #334155;
 
-    --transition: all 0.3s ease;
+--green: #72b95b;
+--orange: #f59e0b;
+--red: #ef5350;
+
+--shadow-sm:
+    0 4px 15px rgba(8, 37, 77, 0.07);
+
+--shadow-md:
+    0 10px 30px rgba(8, 37, 77, 0.10);
+
+--shadow-lg:
+    0 20px 50px rgba(8, 37, 77, 0.15);
+
+--radius-sm: 12px;
+--radius-md: 18px;
+--radius-lg: 24px;
+
+--transition:
+    all 0.3s ease;
+
+
 }
 
 /* =========================================================
-   RESET
-   ========================================================= */
+RESET
+========================================================= */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
 
 html {
-    scroll-behavior: smooth;
+scroll-behavior: smooth;
 }
 
 body {
-    font-family: "Poppins", sans-serif;
-    background: #f2f7fa;
-    color: var(--navy);
-    min-height: 100vh;
-    overflow-x: hidden;
+
+
+font-family: "Poppins", sans-serif;
+
+background:
+    linear-gradient(
+        180deg,
+        #f4f9fc 0%,
+        #eef5f8 100%
+    );
+
+color: var(--navy);
+
+min-height: 100vh;
+
+overflow-x: hidden;
+
+
 }
 
 button,
-a {
-    font-family: inherit;
+input,
+select,
+textarea {
+font-family: inherit;
 }
 
 button {
-    border: none;
-    cursor: pointer;
+border: none;
+cursor: pointer;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+color: inherit;
+text-decoration: none;
 }
 
 /* =========================================================
-   BACKGROUND
-   ========================================================= */
+DECORATIVE BACKGROUND
+========================================================= */
 
 body::before {
-    content: "";
-    position: fixed;
-    top: -180px;
-    right: -180px;
-    width: 420px;
-    height: 420px;
-    background: rgba(169, 216, 231, 0.35);
-    border-radius: 50%;
-    z-index: -2;
+
+
+content: "";
+
+position: fixed;
+
+width: 420px;
+height: 420px;
+
+top: -180px;
+right: -180px;
+
+border-radius: 50%;
+
+background:
+    rgba(169, 216, 231, 0.30);
+
+z-index: -3;
+
+pointer-events: none;
+
+
 }
 
 body::after {
-    content: "";
-    position: fixed;
-    bottom: -220px;
-    left: -180px;
-    width: 450px;
-    height: 450px;
-    background: rgba(201, 157, 80, 0.08);
-    border-radius: 50%;
-    z-index: -2;
+
+
+content: "";
+
+position: fixed;
+
+width: 450px;
+height: 450px;
+
+bottom: -220px;
+left: -180px;
+
+border-radius: 50%;
+
+background:
+    rgba(201, 157, 80, 0.07);
+
+z-index: -3;
+
+pointer-events: none;
+
+
 }
 
 .bg-decoration {
-    position: fixed;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: -1;
+
+
+position: fixed;
+
+border-radius: 50%;
+
+pointer-events: none;
+
+z-index: -2;
+
+
 }
 
 .bg-decoration-1 {
-    width: 120px;
-    height: 120px;
-    top: 25%;
-    right: -50px;
-    border: 25px solid rgba(169, 216, 231, 0.25);
+
+
+width: 120px;
+height: 120px;
+
+top: 25%;
+right: -50px;
+
+border:
+    25px solid
+    rgba(169, 216, 231, 0.20);
+
+
 }
 
 .bg-decoration-2 {
-    width: 100px;
-    height: 100px;
-    top: 60%;
-    left: -40px;
-    border: 20px solid rgba(201, 157, 80, 0.08);
+
+
+width: 100px;
+height: 100px;
+
+top: 60%;
+left: -40px;
+
+border:
+    20px solid
+    rgba(201, 157, 80, 0.08);
+
+
 }
 
 /* =========================================================
-   MAIN APP
-   ========================================================= */
+APP CONTAINER
+========================================================= */
 
 .app {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 0 20px 120px;
+
+
+width: 100%;
+
+max-width: 600px;
+
+margin: 0 auto;
+
+padding:
+    0
+    20px
+    125px;
+
+
 }
 
 /* =========================================================
-   HEADER
-   ========================================================= */
+HEADER
+========================================================= */
 
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 25px 0 20px;
+
+
+display: flex;
+
+align-items: center;
+
+justify-content: space-between;
+
+padding:
+    25px
+    0
+    18px;
+
+animation:
+    fadeUp
+    0.5s ease
+    both;
+
+
 }
 
 .brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+
+
+display: flex;
+
+align-items: center;
+
+gap: 12px;
+
+
 }
 
-/* =========================================
-   LOGO HEADER
-========================================= */
+/* =========================================================
+LOGO
+========================================================= */
 
 .brand-logo {
-    width: 52px;
-    height: 52px;
-    min-width: 52px;
-    border-radius: 14px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-    background: #ffffff;
-    overflow: hidden;
+width: 54px;
+height: 54px;
 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+min-width: 54px;
+
+border-radius: 15px;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+background: var(--white);
+
+overflow: hidden;
+
+border:
+    1px solid
+    rgba(8, 37, 77, 0.05);
+
+box-shadow: var(--shadow-sm);
+
+
 }
 
 .brand-logo img {
-    width: 100%;
-    height: 100%;
 
-    display: block;
 
-    object-fit: contain;
-    object-position: center;
+width: 100%;
+height: 100%;
 
-    padding: 5px;
+object-fit: contain;
+
+padding: 5px;
+
+display: block;
+
+
 }
 
 .brand h1 {
-    font-size: 18px;
-    line-height: 1.2;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    color: var(--navy);
+
+
+color: var(--navy);
+
+font-size: 17px;
+
+line-height: 1.25;
+
+font-weight: 700;
+
+letter-spacing: 0.35px;
+
+
 }
 
 .brand p {
-    font-size: 10px;
-    color: var(--gray-500);
-    margin-top: 3px;
-}
 
-.menu-button {
-    width: 45px;
-    height: 45px;
-    border-radius: 13px;
-    background: var(--white);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition);
-}
 
-.menu-button:hover {
-    background: var(--navy);
-}
+color: var(--gray-500);
 
-.menu-button span {
-    width: 19px;
-    height: 2px;
-    background: var(--navy);
-    border-radius: 10px;
-    transition: var(--transition);
-}
+font-size: 10px;
 
-.menu-button:hover span {
-    background: white;
+margin-top: 3px;
+
+
 }
 
 /* =========================================================
-   GREETING
-   ========================================================= */
+GREETING
+========================================================= */
 
 .greeting {
-    padding: 25px 0 25px;
+
+
+padding:
+    25px
+    0
+    24px;
+
+animation:
+    fadeUp
+    0.5s ease
+    0.1s
+    both;
+
+
 }
 
 .greeting-small {
-    color: var(--blue);
-    font-size: 13px;
-    font-weight: 500;
-    margin-bottom: 5px;
+
+
+color: var(--blue);
+
+font-size: 13px;
+
+font-weight: 500;
+
+margin-bottom: 5px;
+
+
 }
 
 .greeting h2 {
-    font-size: 27px;
-    line-height: 1.3;
-    color: var(--navy);
-    font-weight: 700;
-    letter-spacing: -0.5px;
+
+
+color: var(--navy);
+
+font-size: 27px;
+
+line-height: 1.3;
+
+font-weight: 700;
+
+letter-spacing: -0.5px;
+
+
 }
 
 /* =========================================================
-   GENERAL SECTION
-   ========================================================= */
+GENERAL SECTION
+========================================================= */
 
 .section-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 17px;
+
+
+display: flex;
+
+align-items: center;
+
+justify-content: space-between;
+
+margin-bottom: 18px;
+
+
 }
 
 .eyebrow {
-    display: block;
-    color: var(--blue);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    margin-bottom: 3px;
+
+
+display: block;
+
+color: var(--blue);
+
+font-size: 10px;
+
+font-weight: 700;
+
+letter-spacing: 1.5px;
+
+margin-bottom: 3px;
+
+
 }
 
 .section-heading p {
-    font-size: 13px;
-    color: var(--gray-500);
+
+
+color: var(--gray-500);
+
+font-size: 13px;
+
+
 }
 
 .date-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
-    background: var(--blue-soft);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
+
+
+width: 42px;
+height: 42px;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+border-radius: 13px;
+
+background: var(--blue-soft);
+
+font-size: 18px;
+
+border:
+    1px solid
+    rgba(45, 111, 168, 0.08);
+
+
 }
 
 /* =========================================================
-   MENU CARD
-   ========================================================= */
+MENU CARD
+========================================================= */
 
 .menu-card {
-    background: var(--white);
-    border-radius: var(--radius-lg);
-    padding: 18px;
-    box-shadow: var(--shadow-md);
-    margin-bottom: 18px;
-    border: 1px solid rgba(8, 37, 77, 0.04);
+
+
+background: var(--white);
+
+border-radius: var(--radius-lg);
+
+padding: 18px;
+
+margin-bottom: 22px;
+
+border:
+    1px solid
+    rgba(8, 37, 77, 0.04);
+
+box-shadow: var(--shadow-md);
+
+animation:
+    fadeUp
+    0.5s ease
+    0.2s
+    both;
+
+
 }
 
-.food-image-wrapper {
-    width: 100%;
-    height: 260px;
-    border-radius: 18px;
-    overflow: hidden;
-    position: relative;
-    background: var(--blue-soft);
+/* =========================================================
+PILIHAN PORSI
+========================================================= */
+
+.portion-selector {
+
+
+display: grid;
+
+grid-template-columns:
+    1fr 1fr;
+
+gap: 10px;
+
+margin-bottom: 18px;
+
+
 }
 
+.portion-option {
+
+
+padding: 12px;
+
+border-radius: 15px;
+
+border:
+    1px solid
+    var(--gray-200);
+
+background:
+    var(--gray-50);
+
+transition: var(--transition);
+
+
+}
+
+.portion-option:hover {
+
+
+border-color:
+    var(--blue-light);
+
+transform:
+    translateY(-2px);
+
+
+}
+
+.portion-option.small {
+
+
+background:
+    linear-gradient(
+        135deg,
+        #f1f8ff,
+        #ffffff
+    );
+
+
+}
+
+.portion-option.large {
+
+
+background:
+    linear-gradient(
+        135deg,
+        #fffaf0,
+        #ffffff
+    );
+
+
+}
+
+.portion-header {
+
+
+display: flex;
+
+align-items: center;
+
+gap: 9px;
+
+
+}
+
+.portion-icon {
+
+
+width: 34px;
+height: 34px;
+
+min-width: 34px;
+
+border-radius: 10px;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+background: var(--white);
+
+box-shadow:
+    0 3px 10px
+    rgba(8, 37, 77, 0.07);
+
+font-size: 16px;
+
+
+}
+
+.portion-header strong {
+
+
+display: block;
+
+color: var(--navy);
+
+font-size: 12px;
+
+line-height: 1.3;
+
+
+}
+
+.portion-header small {
+
+
+display: block;
+
+color: var(--gray-500);
+
+font-size: 8px;
+
+line-height: 1.4;
+
+margin-top: 2px;
+
+
+}
+
+/* =========================================================
+MENU IMAGE GRID
+========================================================= */
+
+.menu-images {
+
+
+display: grid;
+
+grid-template-columns:
+    1fr 1fr;
+
+gap: 10px;
+
+margin-bottom: 15px;
+
+
+}
+
+.menu-image-card {
+
+
+position: relative;
+
+min-width: 0;
+
+
+}
+
+.image-label {
+
+
+position: absolute;
+
+z-index: 5;
+
+top: 10px;
+left: 10px;
+
+padding:
+    5px
+    9px;
+
+border-radius: 20px;
+
+background:
+    rgba(255, 255, 255, 0.94);
+
+backdrop-filter:
+    blur(5px);
+
+-webkit-backdrop-filter:
+    blur(5px);
+
+font-size: 9px;
+
+font-weight: 600;
+
+box-shadow:
+    0 3px 10px
+    rgba(0, 0, 0, 0.08);
+
+
+}
+
+.small-label {
+color: var(--blue);
+}
+
+.large-label {
+color: var(--gold);
+}
+
+.menu-image-card .food-image-wrapper {
+
+
+width: 100%;
+
+height: 190px;
+
+border-radius: 16px;
+
+overflow: hidden;
+
+background: var(--blue-soft);
+
+position: relative;
+
+
+}
+
+.menu-image-card
 .food-image-wrapper img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+
+
+width: 100%;
+height: 100%;
+
+display: block;
+
+object-fit: cover;
+
+transition:
+    transform
+    0.5s
+    ease;
+
+
 }
 
-.food-image-wrapper:hover img {
-    transform: scale(1.04);
+.menu-image-card:hover
+.food-image-wrapper img {
+
+
+transform:
+    scale(1.04);
+
+
 }
+
+/* =========================================================
+FAVORITE BUTTON
+========================================================= */
 
 .favorite-button {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.94);
-    color: var(--navy);
-    font-size: 25px;
-    line-height: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
-    transition: var(--transition);
+
+
+position: absolute;
+
+top: 10px;
+right: 10px;
+
+width: 38px;
+height: 38px;
+
+border-radius: 50%;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+background:
+    rgba(255,255,255,0.94);
+
+color: var(--navy);
+
+font-size: 22px;
+
+box-shadow:
+    0 4px 12px
+    rgba(0,0,0,0.10);
+
+transition:
+    var(--transition);
+
+z-index: 10;
+
+
 }
 
 .favorite-button:hover {
-    background: var(--navy);
-    color: white;
-    transform: scale(1.08);
+
+
+background: var(--navy);
+
+color: var(--white);
+
+transform:
+    scale(1.08);
+
+
 }
 
 .favorite-button.active {
-    background: var(--gold);
-    color: white;
+
+
+background: var(--gold);
+
+color: var(--white);
+
+
 }
 
-.menu-card h3 {
-    color: var(--navy);
-    font-size: 18px;
-    line-height: 1.4;
-    margin-top: 18px;
-    font-weight: 700;
+/* =========================================================
+MENU NAME
+========================================================= */
+
+.menu-names {
+
+
+display: grid;
+
+grid-template-columns:
+    1fr 1fr;
+
+gap: 10px;
+
+margin-top: 3px;
+
+
+}
+
+.menu-name-box {
+
+
+padding: 12px;
+
+border-radius: 14px;
+
+background: var(--gray-50);
+
+border:
+    1px solid
+    var(--gray-100);
+
+
+}
+
+.menu-name-box > span {
+
+
+display: inline-block;
+
+color: var(--blue);
+
+font-size: 9px;
+
+font-weight: 700;
+
+margin-bottom: 5px;
+
+text-transform: uppercase;
+
+letter-spacing: 0.5px;
+
+
+}
+
+.menu-name-box h3 {
+
+
+color: var(--navy);
+
+font-size: 11px;
+
+line-height: 1.55;
+
+font-weight: 600;
+
+
 }
 
 .menu-description {
-    color: var(--gray-500);
-    font-size: 12px;
-    line-height: 1.7;
-    margin-top: 7px;
+
+
+color: var(--gray-500);
+
+font-size: 11px;
+
+line-height: 1.7;
+
+margin-top: 14px;
+
+padding-top: 13px;
+
+border-top:
+    1px solid
+    var(--gray-100);
+
+
 }
 
 /* =========================================================
-   ENERGY CARD
-   ========================================================= */
+ENERGY SECTION
+========================================================= */
+
+.energy-section {
+
+
+margin-bottom: 27px;
+
+animation:
+    fadeUp
+    0.5s ease
+    0.3s
+    both;
+
+
+}
+
+.energy-section
+.section-title {
+
+
+margin-bottom: 15px;
+
+
+}
+
+/* =========================================================
+ENERGY GRID
+========================================================= */
+
+.energy-grid {
+
+
+display: grid;
+
+grid-template-columns:
+    1fr 1fr;
+
+gap: 10px;
+
+
+}
 
 .energy-card {
-    background: linear-gradient(
-        135deg,
-        var(--navy) 0%,
-        var(--navy-light) 100%
-    );
-    color: white;
-    border-radius: var(--radius-md);
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 30px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 12px 30px rgba(8, 37, 77, 0.22);
+
+
+position: relative;
+
+overflow: hidden;
+
+min-width: 0;
+
+padding: 16px;
+
+border-radius: 18px;
+
+color: var(--white);
+
+box-shadow:
+    0 10px 25px
+    rgba(8, 37, 77, 0.16);
+
+
 }
 
 .energy-card::before {
-    content: "";
-    position: absolute;
-    width: 160px;
-    height: 160px;
-    right: -70px;
-    top: -80px;
-    border-radius: 50%;
-    border: 30px solid rgba(255, 255, 255, 0.05);
+
+
+content: "";
+
+position: absolute;
+
+width: 90px;
+height: 90px;
+
+right: -40px;
+top: -40px;
+
+border-radius: 50%;
+
+border:
+    18px solid
+    rgba(255,255,255,0.07);
+
+
 }
 
-.energy-card::after {
-    content: "";
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    left: 45%;
-    bottom: -80px;
-    border-radius: 50%;
-    background: rgba(169, 216, 231, 0.08);
+.energy-card.small-energy {
+
+
+background:
+    linear-gradient(
+        135deg,
+        var(--navy),
+        var(--navy-light)
+    );
+
+
 }
 
-.energy-icon {
-    width: 52px;
-    height: 52px;
-    min-width: 52px;
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.12);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
+.energy-card.large-energy {
+
+
+background:
+    linear-gradient(
+        135deg,
+        #9a7435,
+        var(--gold)
+    );
+
+
 }
 
-.energy-card div:nth-child(2) {
-    position: relative;
-    z-index: 2;
+.energy-card-top {
+
+
+display: flex;
+
+align-items: center;
+
+gap: 9px;
+
+position: relative;
+
+z-index: 2;
+
+margin-bottom: 12px;
+
+
 }
 
-.energy-card span {
-    display: block;
-    font-size: 11px;
-    color: rgba(255, 255, 255, 0.7);
+.energy-card .energy-icon {
+
+
+width: 40px;
+height: 40px;
+
+min-width: 40px;
+
+border-radius: 12px;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+background:
+    rgba(255,255,255,0.13);
+
+font-size: 18px;
+
+
 }
 
-.energy-card strong {
-    display: block;
-    font-size: 27px;
-    line-height: 1.3;
-    margin: 2px 0;
-    color: white;
+.energy-card-top span {
+
+
+display: block;
+
+color:
+    rgba(255,255,255,0.95);
+
+font-size: 11px;
+
+font-weight: 600;
+
+
 }
 
-.energy-card small {
-    color: rgba(255, 255, 255, 0.65);
-    font-size: 10px;
+.energy-card-top small {
+
+
+display: block;
+
+color:
+    rgba(255,255,255,0.62);
+
+font-size: 7px;
+
+line-height: 1.4;
+
+margin-top: 2px;
+
+
+}
+
+.energy-card > strong {
+
+
+position: relative;
+
+z-index: 2;
+
+display: block;
+
+color: var(--white);
+
+font-size: 22px;
+
+line-height: 1.2;
+
+
+}
+
+.energy-card > strong span {
+
+
+display: inline;
+
+color: var(--white);
+
+font-size: inherit;
+
+
 }
 
 /* =========================================================
-   NUTRITION SECTION
-   ========================================================= */
+NUTRITION SECTION
+========================================================= */
 
 .nutrition-section {
-    margin-bottom: 25px;
+
+
+margin-bottom: 27px;
+
+scroll-margin-top: 20px;
+
+animation:
+    fadeUp
+    0.5s ease
+    0.4s
+    both;
+
+
 }
 
 .section-title {
-    margin-bottom: 18px;
+
+
+margin-bottom: 17px;
+
+
 }
 
 .section-title h2 {
-    font-size: 22px;
-    color: var(--navy);
-    margin-top: 2px;
+
+
+color: var(--navy);
+
+font-size: 22px;
+
+line-height: 1.3;
+
+margin-top: 2px;
+
+
 }
 
-.nutrition-list {
-    background: var(--white);
-    border-radius: var(--radius-md);
-    padding: 5px 18px;
-    box-shadow: var(--shadow-sm);
+.section-title p {
+
+
+color: var(--gray-500);
+
+font-size: 10px;
+
+line-height: 1.6;
+
+margin-top: 4px;
+
+
 }
 
-.nutrition-item {
-    padding: 17px 0;
-    border-bottom: 1px solid var(--gray-100);
+/* =========================================================
+NUTRITION COMPARISON
+========================================================= */
+
+.nutrition-comparison {
+
+
+background: var(--white);
+
+border-radius: 20px;
+
+overflow: hidden;
+
+box-shadow: var(--shadow-sm);
+
+border:
+    1px solid
+    rgba(8,37,77,0.04);
+
+
 }
 
-.nutrition-item:last-child {
-    border-bottom: none;
+/* =========================================================
+NUTRITION HEADER
+========================================================= */
+
+.nutrition-header {
+
+
+display: grid;
+
+grid-template-columns:
+    1.2fr
+    0.9fr
+    0.9fr;
+
+align-items: center;
+
+background:
+    var(--navy);
+
+color: var(--white);
+
+padding:
+    13px
+    12px;
+
+gap: 8px;
+
+
 }
 
-.nutrition-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
+.nutrition-title {
+
+
+font-size: 10px;
+
+font-weight: 600;
+
+
 }
+
+.nutrition-portion-header {
+
+
+min-width: 0;
+
+text-align: center;
+
+padding:
+    7px
+    4px;
+
+border-radius: 9px;
+
+font-size: 10px;
+
+font-weight: 600;
+
+
+}
+
+.nutrition-portion-header.small {
+
+
+background:
+    rgba(169,216,231,0.16);
+
+color:
+    var(--blue-light);
+
+
+}
+
+.nutrition-portion-header.large {
+
+
+background:
+    rgba(229,196,119,0.16);
+
+color:
+    var(--gold-light);
+
+
+}
+
+.nutrition-portion-header span {
+
+
+display: block;
+
+font-size: 8px;
+
+margin-top: 2px;
+
+
+}
+
+/* =========================================================
+NUTRITION ROW
+========================================================= */
+
+.nutrition-row {
+
+
+display: grid;
+
+grid-template-columns:
+    1.2fr
+    0.9fr
+    0.9fr;
+
+gap: 8px;
+
+align-items: center;
+
+padding:
+    15px 12px;
+
+border-bottom:
+    1px solid
+    var(--gray-100);
+
+transition:
+    background
+    0.25s
+    ease;
+
+
+}
+
+.nutrition-row:last-child {
+
+
+border-bottom: none;
+
+
+}
+
+.nutrition-row:hover {
+
+
+background:
+    #fbfdfe;
+
+
+}
+
+/* =========================================================
+NUTRITION LABEL
+========================================================= */
 
 .nutrition-label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 13px;
-    color: var(--gray-700);
-    font-weight: 500;
+
+
+display: flex;
+
+align-items: center;
+
+gap: 8px;
+
+min-width: 0;
+
+
+}
+
+.nutrition-label > div {
+
+
+min-width: 0;
+
+
+}
+
+.nutrition-label strong {
+
+
+display: block;
+
+color: var(--navy);
+
+font-size: 10px;
+
+font-weight: 700;
+
+
+}
+
+.nutrition-label small {
+
+
+display: block;
+
+color: var(--gray-400);
+
+font-size: 7px;
+
+line-height: 1.4;
+
+margin-top: 2px;
+
+
 }
 
 .nutrition-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 11px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 17px;
+
+
+width: 34px;
+height: 34px;
+
+min-width: 34px;
+
+border-radius: 10px;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+font-size: 15px;
+
+transition:
+    transform
+    0.3s
+    ease;
+
+
 }
 
 .nutrition-icon.protein {
-    background: #edf4ff;
+
+
+background:
+    #edf4ff;
+
+
 }
 
 .nutrition-icon.fat {
-    background: #eef9fc;
+
+
+background:
+    #eef9fc;
+
+
 }
 
 .nutrition-icon.carbohydrate {
-    background: #fff8e8;
+
+
+background:
+    #fff8e8;
+
+
 }
 
 .nutrition-icon.fiber {
-    background: #eef8ed;
+
+
+background:
+    #eef8ed;
+
+
 }
 
-.nutrition-icon.sugar {
-    background: #fff0f0;
+/* =========================================================
+NUTRITION VALUE
+========================================================= */
+
+.nutrition-value {
+
+
+min-width: 0;
+
+text-align: center;
+
+padding:
+    5px
+    3px;
+
+
 }
 
-.nutrition-icon.sodium {
-    background: #f1f3f7;
+.nutrition-value strong {
+
+
+display: block;
+
+color: var(--navy);
+
+font-size: 10px;
+
+font-weight: 700;
+
+margin-bottom: 7px;
+
+white-space: nowrap;
+
+
 }
 
-.nutrition-top strong {
-    font-size: 14px;
-    color: var(--navy);
+.nutrition-value.small {
+
+
+background:
+    #f5fbff;
+
+border-radius: 10px;
+
+
 }
+
+.nutrition-value.large {
+
+
+background:
+    #fffbf2;
+
+border-radius: 10px;
+
+
+}
+
+/* =========================================================
+PROGRESS BAR
+========================================================= */
 
 .progress {
-    width: 100%;
-    height: 6px;
-    border-radius: 10px;
-    background: var(--gray-100);
-    overflow: hidden;
+
+
+width: 100%;
+
+height: 5px;
+
+overflow: hidden;
+
+border-radius: 20px;
+
+background:
+    var(--gray-200);
+
+
 }
 
 .progress span {
-    display: block;
-    height: 100%;
-    border-radius: 10px;
-    background: linear-gradient(
+
+
+display: block;
+
+width: 0;
+
+height: 100%;
+
+border-radius: inherit;
+
+transition:
+    width
+    1.2s
+    cubic-bezier(.22,1,.36,1);
+
+
+}
+
+/* Porsi kecil */
+
+.nutrition-value.small
+.progress span {
+
+
+background:
+    linear-gradient(
         90deg,
         var(--navy),
         var(--blue)
     );
-    transition: width 1s ease;
+
+
 }
 
-/* Warna progress khusus */
+/* Porsi besar */
 
-#proteinProgress {
-    background: linear-gradient(
-        90deg,
-        #174b82,
-        #3c7fb5
-    );
-}
+.nutrition-value.large
+.progress span {
 
-#fatProgress {
-    background: linear-gradient(
-        90deg,
-        #2385a5,
-        #55abc7
-    );
-}
 
-#carbohydrateProgress {
-    background: linear-gradient(
+background:
+    linear-gradient(
         90deg,
-        #c99d50,
-        #e2bf76
+        var(--gold),
+        var(--gold-light)
     );
-}
 
-#fiberProgress {
-    background: linear-gradient(
-        90deg,
-        #5d9f4c,
-        #86c875
-    );
-}
 
-#sugarProgress {
-    background: linear-gradient(
-        90deg,
-        #d16b6b,
-        #e79a9a
-    );
-}
-
-#sodiumProgress {
-    background: linear-gradient(
-        90deg,
-        #64748b,
-        #94a3b8
-    );
 }
 
 /* =========================================================
-   INFO CARD
-   ========================================================= */
+INFO CARD
+========================================================= */
 
 .info-card {
-    background: var(--blue-soft);
-    border: 1px solid rgba(45, 111, 168, 0.12);
-    border-radius: var(--radius-md);
-    padding: 17px;
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    margin-bottom: 30px;
+
+
+display: flex;
+
+align-items: flex-start;
+
+gap: 11px;
+
+padding: 16px;
+
+margin-bottom: 30px;
+
+border-radius: 17px;
+
+background:
+    var(--blue-soft);
+
+border:
+    1px solid
+    rgba(45,111,168,0.10);
+
+animation:
+    fadeUp
+    0.5s ease
+    0.5s
+    both;
+
+
 }
 
 .info-icon {
-    width: 32px;
-    height: 32px;
-    min-width: 32px;
-    border-radius: 10px;
-    background: var(--navy);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 15px;
+
+
+width: 32px;
+height: 32px;
+
+min-width: 32px;
+
+border-radius: 10px;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+background: var(--navy);
+
+color: var(--white);
+
+font-size: 14px;
+
+
 }
 
 .info-card p {
-    color: var(--gray-600);
-    font-size: 11px;
-    line-height: 1.7;
+
+
+color: var(--gray-600);
+
+font-size: 10px;
+
+line-height: 1.7;
+
+
 }
 
 .info-card strong {
-    color: var(--navy);
+
+
+color: var(--navy);
+
+
 }
 
 /* =========================================================
-   FOOTER
-   ========================================================= */
+FOOTER
+========================================================= */
 
 .footer {
-    text-align: center;
-    padding: 10px 0 20px;
+
+
+text-align: center;
+
+padding:
+    5px
+    0
+    15px;
+
+
 }
 
-/* =========================================
-   LOGO FOOTER
-========================================= */
-
 .footer-logo {
-    width: 65px;
-    height: 65px;
-    margin: 0 auto 12px;
 
-    border-radius: 50%;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+width: 62px;
+height: 62px;
 
-    background: #ffffff;
+margin:
+    0
+    auto
+    11px;
 
-    overflow: hidden;
+border-radius: 50%;
 
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+background: var(--white);
+
+overflow: hidden;
+
+box-shadow:
+    0 6px 18px
+    rgba(0,0,0,0.09);
+
+
 }
 
 .footer-logo img {
-    width: 100%;
-    height: 100%;
 
-    display: block;
 
-    object-fit: contain;
-    object-position: center;
+width: 100%;
+height: 100%;
 
-    padding: 5px;
+object-fit: contain;
+
+padding: 5px;
+
+display: block;
+
+
 }
 
 .footer p {
-    color: var(--navy);
-    font-size: 12px;
-    font-weight: 600;
+
+
+color: var(--navy);
+
+font-size: 11px;
+
+font-weight: 600;
+
+
 }
 
 .footer small {
-    display: block;
-    color: var(--gray-400);
-    font-size: 9px;
-    margin-top: 3px;
+
+
+display: block;
+
+color: var(--gray-400);
+
+font-size: 8px;
+
+margin-top: 3px;
+
+
 }
 
 /* =========================================================
-   BOTTOM NAVIGATION
-   ========================================================= */
+BOTTOM NAVIGATION
+========================================================= */
 
 .bottom-nav {
-    position: fixed;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 30px);
-    max-width: 560px;
-    height: 68px;
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(8, 37, 77, 0.08);
-    border-radius: 22px;
-    box-shadow: 0 12px 35px rgba(8, 37, 77, 0.16);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    z-index: 1000;
+
+
+position: fixed;
+
+bottom: 14px;
+
+left: 50%;
+
+transform:
+    translateX(-50%);
+
+width:
+    calc(100% - 30px);
+
+max-width: 560px;
+
+height: 66px;
+
+display: flex;
+
+align-items: center;
+
+justify-content: space-around;
+
+background:
+    rgba(255,255,255,0.95);
+
+backdrop-filter:
+    blur(15px);
+
+-webkit-backdrop-filter:
+    blur(15px);
+
+border:
+    1px solid
+    rgba(8,37,77,0.07);
+
+border-radius: 21px;
+
+box-shadow:
+    0 12px 35px
+    rgba(8,37,77,0.14);
+
+z-index: 1000;
+
+
 }
 
 .nav-item {
-    width: 80px;
-    height: 55px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2px;
-    color: var(--gray-400);
-    border-radius: 15px;
-    transition: var(--transition);
+
+
+position: relative;
+
+width: 80px;
+
+height: 54px;
+
+display: flex;
+
+flex-direction: column;
+
+align-items: center;
+
+justify-content: center;
+
+gap: 2px;
+
+border-radius: 15px;
+
+color: var(--gray-400);
+
+transition:
+    var(--transition);
+
+
 }
 
 .nav-item span {
-    font-size: 20px;
-    line-height: 1;
+
+
+font-size: 20px;
+
+line-height: 1;
+
+transition:
+    transform
+    0.3s
+    ease;
+
+
 }
 
 .nav-item small {
-    font-size: 9px;
-    font-weight: 500;
+
+
+font-size: 8px;
+
+font-weight: 500;
+
+
 }
 
 .nav-item:hover {
-    color: var(--navy);
+
+
+color: var(--navy);
+
+
 }
 
 .nav-item.active {
-    color: var(--navy);
+
+
+color: var(--navy);
+
+
 }
 
 .nav-item.active span {
-    font-weight: 700;
+
+
+transform:
+    scale(1.10);
+
+
 }
 
 .nav-item.active::before {
-    content: "";
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background: var(--gold);
-    border-radius: 50%;
-    margin-top: -45px;
+
+
+content: "";
+
+position: absolute;
+
+top: 5px;
+
+width: 5px;
+height: 5px;
+
+border-radius: 50%;
+
+background:
+    var(--gold);
+
+
 }
 
 /* =========================================================
-   MENU OVERLAY
-   ========================================================= */
-
-.menu-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(5, 26, 56, 0.5);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 80px;
-    opacity: 0;
-    visibility: hidden;
-    transition: var(--transition);
-    z-index: 2000;
-}
-
-.menu-overlay.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-.menu-popup {
-    width: calc(100% - 40px);
-    max-width: 400px;
-    background: white;
-    border-radius: 22px;
-    padding: 25px;
-    position: relative;
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-20px) scale(0.96);
-    transition: var(--transition);
-}
-
-.menu-overlay.show .menu-popup {
-    transform: translateY(0) scale(1);
-}
-
-.menu-popup h3 {
-    color: var(--navy);
-    font-size: 20px;
-    margin-bottom: 18px;
-}
-
-.menu-popup a {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 12px;
-    border-radius: 12px;
-    color: var(--gray-600);
-    font-size: 13px;
-    transition: var(--transition);
-}
-
-.menu-popup a:hover {
-    background: var(--blue-soft);
-    color: var(--navy);
-}
-
-.close-menu {
-    position: absolute;
-    top: 18px;
-    right: 18px;
-    width: 35px;
-    height: 35px;
-    border-radius: 10px;
-    background: var(--gray-100);
-    color: var(--gray-600);
-    font-size: 23px;
-    line-height: 1;
-    transition: var(--transition);
-}
-
-.close-menu:hover {
-    background: var(--navy);
-    color: white;
-}
-
-/* =========================================================
-   ANIMATION
-   ========================================================= */
+ANIMATION
+========================================================= */
 
 @keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
-.header {
-    animation: fadeUp 0.5s ease both;
-}
+from {
 
-.greeting {
-    animation: fadeUp 0.5s ease 0.1s both;
-}
-
-.menu-card {
-    animation: fadeUp 0.5s ease 0.2s both;
-}
-
-.energy-card {
-    animation: fadeUp 0.5s ease 0.3s both;
-}
-
-.nutrition-section {
-    animation: fadeUp 0.5s ease 0.4s both;
-}
-
-.info-card {
-    animation: fadeUp 0.5s ease 0.5s both;
-}
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (min-width: 601px) {
-    .app {
-        padding-top: 10px;
-    }
-
-    .header {
-        padding-top: 20px;
-    }
-
-    .food-image-wrapper {
-        height: 300px;
-    }
-}
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 480px) {
-
-    .app {
-        padding-left: 15px;
-        padding-right: 15px;
-        padding-bottom: 110px;
-    }
-
-    .header {
-        padding-top: 18px;
-    }
-
-    .brand-logo {
-        width: 48px;
-        height: 48px;
-    }
-
-    .brand h1 {
-        font-size: 16px;
-    }
-
-    .greeting {
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-
-    .greeting h2 {
-        font-size: 24px;
-    }
-
-    .menu-card {
-        padding: 14px;
-        border-radius: 20px;
-    }
-
-    .food-image-wrapper {
-        height: 230px;
-        border-radius: 15px;
-    }
-
-    .menu-card h3 {
-        font-size: 16px;
-    }
-
-    .energy-card {
-        padding: 17px;
-    }
-
-    .energy-card strong {
-        font-size: 24px;
-    }
-
-    .nutrition-list {
-        padding: 4px 15px;
-    }
-
-    .nutrition-item {
-        padding: 15px 0;
-    }
-
-    .bottom-nav {
-        bottom: 10px;
-        width: calc(100% - 20px);
-        height: 64px;
-        border-radius: 20px;
-    }
-}
-
-/* =========================================================
-   SMALL MOBILE
-   ========================================================= */
-
-@media (max-width: 360px) {
-
-    .greeting h2 {
-        font-size: 22px;
-    }
-
-    .food-image-wrapper {
-        height: 205px;
-    }
-
-    .energy-icon {
-        width: 45px;
-        height: 45px;
-        min-width: 45px;
-    }
-
-    .energy-card strong {
-        font-size: 21px;
-    }
-
-    .nav-item {
-        width: 70px;
-    }
-}
-
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
-
-/* =========================================================
-   ANIMASI KANDUNGAN GIZI
-   ========================================================= */
-
-.nutrition-section {
-    scroll-margin-top: 20px;
-}
-
-/* Kondisi awal */
-.nutrition-section .section-title {
     opacity: 0;
-    transform: translateY(25px);
+
+    transform:
+        translateY(15px);
 }
 
-.nutrition-section .nutrition-item {
-    opacity: 0;
-    transform: translateY(35px);
+to {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
 }
 
-/* Saat aktif */
-.nutrition-section.show .section-title {
-    animation: nutritionTitle 0.7s ease forwards;
+
 }
-
-.nutrition-section.show .nutrition-item {
-    animation: nutritionItem 0.7s cubic-bezier(.22,1,.36,1) forwards;
-}
-
-/* Delay satu per satu */
-
-.nutrition-section.show .nutrition-item:nth-child(1) {
-    animation-delay: 0.15s;
-}
-
-.nutrition-section.show .nutrition-item:nth-child(2) {
-    animation-delay: 0.30s;
-}
-
-.nutrition-section.show .nutrition-item:nth-child(3) {
-    animation-delay: 0.45s;
-}
-
-.nutrition-section.show .nutrition-item:nth-child(4) {
-    animation-delay: 0.60s;
-}
-
-.nutrition-section.show .nutrition-item:nth-child(5) {
-    animation-delay: 0.75s;
-}
-
-.nutrition-section.show .nutrition-item:nth-child(6) {
-    animation-delay: 0.90s;
-}
-
 
 /* =========================================================
-   TITLE
-   ========================================================= */
+NUTRITION SCROLL ANIMATION
+========================================================= */
+
+.nutrition-section
+.section-title {
+
+
+opacity: 0;
+
+transform:
+    translateY(20px);
+
+
+}
+
+.nutrition-section
+.nutrition-row {
+
+
+opacity: 0;
+
+transform:
+    translateY(25px);
+
+
+}
+
+.nutrition-section.show
+.section-title {
+
+
+animation:
+    nutritionTitle
+    0.6s
+    ease
+    forwards;
+
+
+}
+
+.nutrition-section.show
+.nutrition-row {
+
+
+animation:
+    nutritionItem
+    0.65s
+    cubic-bezier(.22,1,.36,1)
+    forwards;
+
+
+}
+
+.nutrition-section.show
+.nutrition-row:nth-child(2) {
+
+
+animation-delay:
+    0.12s;
+
+
+}
+
+.nutrition-section.show
+.nutrition-row:nth-child(3) {
+
+
+animation-delay:
+    0.24s;
+
+
+}
+
+.nutrition-section.show
+.nutrition-row:nth-child(4) {
+
+
+animation-delay:
+    0.36s;
+
+
+}
+
+.nutrition-section.show
+.nutrition-row:nth-child(5) {
+
+
+animation-delay:
+    0.48s;
+
+
+}
+
+/* =========================================================
+NUTRITION ICON ANIMATION
+========================================================= */
+
+.nutrition-section.show
+.nutrition-icon {
+
+
+animation:
+    nutritionIcon
+    0.7s
+    cubic-bezier(.34,1.56,.64,1);
+
+
+}
 
 @keyframes nutritionTitle {
 
-    0% {
-        opacity: 0;
-        transform: translateY(25px);
-    }
 
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+from {
 
+    opacity: 0;
+
+    transform:
+        translateY(20px);
+}
+
+to {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
 }
 
 
-/* =========================================================
-   ITEM
-   ========================================================= */
+}
 
 @keyframes nutritionItem {
 
-    0% {
-        opacity: 0;
-        transform: translateY(35px) scale(0.97);
-    }
 
-    70% {
-        transform: translateY(-3px) scale(1.01);
-    }
+0% {
 
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+    opacity: 0;
 
+    transform:
+        translateY(25px)
+        scale(0.98);
+}
+
+70% {
+
+    transform:
+        translateY(-2px)
+        scale(1.01);
+}
+
+100% {
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
 }
 
 
-/* =========================================================
-   ICON
-   ========================================================= */
-
-.nutrition-section.show .nutrition-icon {
-    animation: nutritionIcon 0.7s cubic-bezier(.34,1.56,.64,1);
 }
 
 @keyframes nutritionIcon {
 
-    0% {
-        transform: scale(0) rotate(-20deg);
-    }
 
-    70% {
-        transform: scale(1.15) rotate(5deg);
-    }
+0% {
 
-    100% {
-        transform: scale(1) rotate(0);
-    }
-
+    transform:
+        scale(0)
+        rotate(-15deg);
 }
 
+70% {
+
+    transform:
+        scale(1.12)
+        rotate(4deg);
+}
+
+100% {
+
+    transform:
+        scale(1)
+        rotate(0);
+}
+
+
+}
 
 /* =========================================================
-   PROGRESS BAR
-   ========================================================= */
+PROGRESS ANIMATION
+========================================================= */
 
-.nutrition-item .progress span {
-    width: 0 !important;
-    transform-origin: left center;
+.nutrition-section.show
+.progress span {
+
+
+animation:
+    progressLoad
+    1.2s
+    cubic-bezier(.22,1,.36,1)
+    forwards;
+
+
+}
+
+@keyframes progressLoad {
+
+
+from {
+
+    transform:
+        scaleX(0);
+
+    transform-origin:
+        left center;
+}
+
+to {
+
+    transform:
+        scaleX(1);
+
+    transform-origin:
+        left center;
 }
 
 
-/* Protein */
-.nutrition-section.show #proteinProgress {
-    width: 45% !important;
-    transition: width 1.2s cubic-bezier(.22,1,.36,1);
 }
-
-
-/* Lemak */
-.nutrition-section.show #fatProgress {
-    width: 40% !important;
-    transition: width 1.2s cubic-bezier(.22,1,.36,1);
-}
-
-
-/* Karbohidrat */
-.nutrition-section.show #carbohydrateProgress {
-    width: 75% !important;
-    transition: width 1.4s cubic-bezier(.22,1,.36,1);
-}
-
-
-/* Serat */
-.nutrition-section.show #fiberProgress {
-    width: 30% !important;
-    transition: width 1s cubic-bezier(.22,1,.36,1);
-}
-
-
-/* Gula */
-.nutrition-section.show #sugarProgress {
-    width: 35% !important;
-    transition: width 1s cubic-bezier(.22,1,.36,1);
-}
-
-
-/* Natrium */
-.nutrition-section.show #sodiumProgress {
-    width: 45% !important;
-    transition: width 1.2s cubic-bezier(.22,1,.36,1);
-}
-
 
 /* =========================================================
-   HOVER EFFECT
-   ========================================================= */
+TABLET / DESKTOP
+========================================================= */
 
-.nutrition-item {
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+@media (min-width: 601px) {
+
+
+.app {
+
+    padding-top: 10px;
+
+    padding-bottom: 130px;
 }
 
-.nutrition-item:hover {
-    transform: translateY(-4px);
+
+.header {
+
+    padding-top: 20px;
 }
 
-.nutrition-item:hover .nutrition-icon {
-    transform: scale(1.12) rotate(5deg);
+
+.menu-image-card
+.food-image-wrapper {
+
+    height: 220px;
 }
 
+
+.nutrition-value strong {
+
+    font-size: 11px;
+}
+
+
+}
 
 /* =========================================================
-   NAVIGATION GIZI
-   ========================================================= */
+MOBILE
+========================================================= */
 
-#nutritionNav {
-    position: relative;
+@media (max-width: 480px) {
+
+
+.app {
+
+    padding-left: 15px;
+
+    padding-right: 15px;
+
+    padding-bottom: 110px;
 }
 
-#nutritionNav.active {
-    color: var(--navy);
+
+.header {
+
+    padding-top: 18px;
 }
 
-#nutritionNav.active span {
-    transform: scale(1.12);
-    transition: transform 0.3s ease;
+
+.brand-logo {
+
+    width: 48px;
+    height: 48px;
+
+    min-width: 48px;
 }
 
+
+.brand h1 {
+
+    font-size: 15px;
+}
+
+
+.greeting {
+
+    padding:
+        20px
+        0;
+}
+
+
+.greeting h2 {
+
+    font-size: 24px;
+}
+
+
+.menu-card {
+
+    padding: 14px;
+
+    border-radius: 20px;
+}
+
+
+.portion-selector {
+
+    gap: 8px;
+}
+
+
+.portion-option {
+
+    padding: 10px;
+}
+
+
+.portion-icon {
+
+    width: 30px;
+    height: 30px;
+
+    min-width: 30px;
+
+    font-size: 14px;
+}
+
+
+.portion-header strong {
+
+    font-size: 10px;
+}
+
+
+.portion-header small {
+
+    font-size: 7px;
+}
+
+
+.menu-image-card
+.food-image-wrapper {
+
+    height: 175px;
+
+    border-radius: 14px;
+}
+
+
+.menu-name-box {
+
+    padding: 10px;
+}
+
+
+.menu-name-box h3 {
+
+    font-size: 10px;
+}
+
+
+.energy-card {
+
+    padding: 14px;
+}
+
+
+.energy-card-top {
+
+    gap: 7px;
+
+    margin-bottom: 10px;
+}
+
+
+.energy-card .energy-icon {
+
+    width: 35px;
+    height: 35px;
+
+    min-width: 35px;
+
+    font-size: 16px;
+}
+
+
+.energy-card-top span {
+
+    font-size: 10px;
+}
+
+
+.energy-card > strong {
+
+    font-size: 19px;
+}
+
+
+.nutrition-header,
+.nutrition-row {
+
+    grid-template-columns:
+        1.15fr
+        0.9fr
+        0.9fr;
+
+    gap: 6px;
+}
+
+
+.nutrition-header {
+
+    padding:
+        11px
+        9px;
+}
+
+
+.nutrition-row {
+
+    padding:
+        13px
+        9px;
+}
+
+
+.nutrition-label {
+
+    gap: 6px;
+}
+
+
+.nutrition-icon {
+
+    width: 30px;
+    height: 30px;
+
+    min-width: 30px;
+
+    font-size: 13px;
+}
+
+
+.nutrition-label strong {
+
+    font-size: 9px;
+}
+
+
+.nutrition-label small {
+
+    display: none;
+}
+
+
+.nutrition-value {
+
+    padding:
+        5px
+        2px;
+}
+
+
+.nutrition-value strong {
+
+    font-size: 9px;
+
+    margin-bottom: 6px;
+}
+
+
+.progress {
+
+    height: 4px;
+}
+
+
+.nutrition-portion-header {
+
+    font-size: 9px;
+}
+
+
+.nutrition-portion-header span {
+
+    font-size: 7px;
+}
+
+
+.bottom-nav {
+
+    bottom: 10px;
+
+    width:
+        calc(100% - 20px);
+
+    height: 63px;
+
+    border-radius: 20px;
+}
+
+
+.nav-item {
+
+    width: 70px;
+}
+
+
+}
 
 /* =========================================================
-   HILANGKAN SIDEBAR LAMA
-   ========================================================= */
+SMALL MOBILE
+========================================================= */
 
-.menu-button,
-.menu-overlay,
-.menu-popup {
-    display: none !important;
+@media (max-width: 360px) {
+
+
+.app {
+
+    padding-left: 12px;
+
+    padding-right: 12px;
+}
+
+
+.brand h1 {
+
+    font-size: 14px;
+}
+
+
+.greeting h2 {
+
+    font-size: 22px;
+}
+
+
+.portion-selector {
+
+    grid-template-columns:
+        1fr;
+}
+
+
+.menu-images {
+
+    grid-template-columns:
+        1fr;
+}
+
+
+.menu-image-card
+.food-image-wrapper {
+
+    height: 210px;
+}
+
+
+.menu-names {
+
+    grid-template-columns:
+        1fr;
+}
+
+
+.energy-grid {
+
+    grid-template-columns:
+        1fr;
+}
+
+
+.energy-card > strong {
+
+    font-size: 22px;
+}
+
+
+.nutrition-header,
+.nutrition-row {
+
+    grid-template-columns:
+        1.1fr
+        0.95fr
+        0.95fr;
+}
+
+
+.nutrition-label strong {
+
+    font-size: 8px;
+}
+
+
+.nutrition-value strong {
+
+    font-size: 8px;
+}
+
+
+.nutrition-icon {
+
+    width: 27px;
+    height: 27px;
+
+    min-width: 27px;
+
+    font-size: 12px;
+}
+
+
+}
+
+/* =========================================================
+REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+
+*,
+*::before,
+*::after {
+
+    animation-duration:
+        0.01ms !important;
+
+    animation-iteration-count:
+        1 !important;
+
+    transition-duration:
+        0.01ms !important;
+
+    scroll-behavior:
+        auto !important;
+}
+
+
 }
