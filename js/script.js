@@ -1,16 +1,119 @@
 /* =========================================================
-   SCROLL KE INFORMASI GIZI
-   ========================================================= */
+SCRIPT.JS
+SPPG KUNINGAN CIBINGBIN SINDANGJAWA
+
+Fungsi:
+
+* Navigasi halaman
+* Membaca data dari menu.js
+* Menampilkan data menu
+* Menampilkan gizi porsi kecil & besar
+* Animasi angka gizi
+  ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const nutritionNav = document.getElementById("nutritionNav");
-    const nutritionSection = document.getElementById("nutrition");
-    const homeNav = document.getElementById("homeNav");
 
-    if (nutritionNav && nutritionSection) {
+/* =====================================================
+   ELEMENT
+===================================================== */
 
-        nutritionNav.addEventListener("click", function (e) {
+const nutritionNav =
+    document.getElementById("nutritionNav");
+
+const nutritionSection =
+    document.getElementById("nutrition");
+
+const homeNav =
+    document.getElementById("homeNav");
+
+
+/* =====================================================
+   TANGGAL HARI INI
+===================================================== */
+
+const today = new Date();
+
+const day =
+    String(today.getDate()).padStart(2, "0");
+
+const month =
+    String(today.getMonth() + 1).padStart(2, "0");
+
+const year =
+    today.getFullYear();
+
+const todayKey =
+    day + month + year;
+
+
+
+
+
+/* =====================================================
+   FUNGSI SET TEXT
+===================================================== */
+
+function setText(
+    elementId,
+    value
+) {
+
+    const element =
+        document.getElementById(elementId);
+
+    if (
+        element &&
+        value !== undefined
+    ) {
+
+        element.textContent =
+            value;
+
+    }
+
+}
+
+
+
+/* =====================================================
+   FUNGSI PROGRESS BAR
+===================================================== */
+
+function setProgress(
+    elementId,
+    value
+) {
+
+    const element =
+        document.getElementById(elementId);
+
+    if (
+        element &&
+        value !== undefined
+    ) {
+
+        element.style.width =
+            value + "%";
+
+    }
+
+}
+
+
+
+/* =====================================================
+   SCROLL KE INFORMASI GIZI
+===================================================== */
+
+if (
+    nutritionNav &&
+    nutritionSection
+) {
+
+    nutritionNav.addEventListener(
+        "click",
+        function (e) {
 
             e.preventDefault();
 
@@ -19,35 +122,44 @@ document.addEventListener("DOMContentLoaded", function () {
                 block: "start"
             });
 
-        });
+        }
+    );
 
-    }
+}
 
 
-    /* =====================================================
-       ANIMASI SAAT KANDUNGAN GIZI MUNCUL
-       ===================================================== */
 
-    if (nutritionSection) {
+/* =====================================================
+   ANIMASI SAAT INFORMASI GIZI MUNCUL
+===================================================== */
 
-        const observer = new IntersectionObserver(
+if (nutritionSection) {
+
+    const observer =
+        new IntersectionObserver(
             function (entries) {
 
-                entries.forEach(function (entry) {
+                entries.forEach(
+                    function (entry) {
 
-                    if (entry.isIntersecting) {
+                        if (
+                            entry.isIntersecting
+                        ) {
 
-                        nutritionSection.classList.add("show");
+                            nutritionSection.classList.add(
+                                "show"
+                            );
 
-                        animateNutritionNumbers();
+                            animateNutritionNumbers();
 
-                        observer.unobserve(
-                            nutritionSection
-                        );
+                            observer.unobserve(
+                                nutritionSection
+                            );
+
+                        }
 
                     }
-
-                });
+                );
 
             },
             {
@@ -55,120 +167,246 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         );
 
-        observer.observe(nutritionSection);
 
+    observer.observe(
+        nutritionSection
+    );
+
+}
+
+
+
+/* =====================================================
+   ANIMASI ANGKA GIZI
+===================================================== */
+
+function animateNutritionNumbers() {
+
+
+    if (
+        typeof menuData === "undefined" ||
+        !menuData[todayKey]
+    ) {
+        return;
     }
 
 
-    /* =====================================================
-       ANIMASI ANGKA
-       ===================================================== */
+    const data =
+        menuData[todayKey];
 
-    function animateNutritionNumbers() {
+
+    /* ===============================================
+       PORSI KECIL
+    =============================================== */
+
+    if (data.kecil) {
 
         animateNumber(
-            "proteinValue",
-            23,6,
+            "smallProteinValue",
+            data.kecil.protein,
             1000
         );
 
         animateNumber(
-            "fatValue",
-            15,5,
+            "smallFatValue",
+            data.kecil.lemak,
             1000
         );
 
         animateNumber(
-            "carbohydrateValue",
-            69,2,
+            "smallCarbohydrateValue",
+            data.kecil.karbohidrat,
             1200
         );
 
         animateNumber(
-            "fiberValue",
-            2,7,
+            "smallFiberValue",
+            data.kecil.serat,
             800
         );
 
     }
 
 
-    function animateNumber(
-        elementId,
-        target,
-        duration
-    ) {
 
-        const element =
-            document.getElementById(elementId);
+    /* ===============================================
+       PORSI BESAR
+    =============================================== */
 
-        if (!element) return;
+    if (data.besar) {
 
-        const startTime =
-            performance.now();
+        animateNumber(
+            "largeProteinValue",
+            data.besar.protein,
+            1000
+        );
 
-        function update(currentTime) {
+        animateNumber(
+            "largeFatValue",
+            data.besar.lemak,
+            1000
+        );
 
-            const elapsed =
-                currentTime - startTime;
+        animateNumber(
+            "largeCarbohydrateValue",
+            data.besar.karbohidrat,
+            1200
+        );
 
-            const progress =
-                Math.min(
-                    elapsed / duration,
-                    1
-                );
-
-            /* Efek ease-out */
-            const eased =
-                1 - Math.pow(
-                    1 - progress,
-                    3
-                );
-
-            const value =
-                Math.round(
-                    target * eased
-                );
-
-            element.textContent = value;
-
-            if (progress < 1) {
-
-                requestAnimationFrame(update);
-
-            } else {
-
-                element.textContent = target;
-
-            }
-
-        }
-
-        requestAnimationFrame(update);
-
-    }
-
-
-    /* =====================================================
-       HOME
-       ===================================================== */
-
-    if (homeNav) {
-
-        homeNav.addEventListener(
-            "click",
-            function (e) {
-
-                e.preventDefault();
-
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-
-            }
+        animateNumber(
+            "largeFiberValue",
+            data.besar.serat,
+            800
         );
 
     }
+
+}
+
+
+
+/* =====================================================
+   ANIMASI SATU ANGKA
+===================================================== */
+
+function animateNumber(
+    elementId,
+    target,
+    duration
+) {
+
+    const element =
+        document.getElementById(elementId);
+
+
+    if (
+        !element ||
+        target === undefined
+    ) {
+        return;
+    }
+
+
+    const numericTarget =
+        parseFloat(
+            String(target)
+                .replace(",", ".")
+        );
+
+
+    if (
+        isNaN(numericTarget)
+    ) {
+
+        element.textContent =
+            target;
+
+        return;
+
+    }
+
+
+    const startTime =
+        performance.now();
+
+
+    function update(currentTime) {
+
+        const elapsed =
+            currentTime - startTime;
+
+
+        const progress =
+            Math.min(
+                elapsed / duration,
+                1
+            );
+
+
+        /* Ease Out */
+
+        const eased =
+            1 - Math.pow(
+                1 - progress,
+                3
+            );
+
+
+        const value =
+            numericTarget * eased;
+
+
+        element.textContent =
+            formatNumber(value);
+
+
+        if (
+            progress < 1
+        ) {
+
+            requestAnimationFrame(
+                update
+            );
+
+        } else {
+
+            element.textContent =
+                formatNumber(
+                    numericTarget
+                );
+
+        }
+
+    }
+
+
+    requestAnimationFrame(
+        update
+    );
+
+}
+
+
+
+/* =====================================================
+   FORMAT ANGKA
+   Contoh:
+   23.6 -> 23,6
+   20.15 -> 20,15
+===================================================== */
+
+function formatNumber(value) {
+
+    return value
+        .toFixed(2)
+        .replace(/\.?0+$/, "")
+        .replace(".", ",");
+
+}
+
+
+
+/* =====================================================
+   HOME
+===================================================== */
+
+if (homeNav) {
+
+    homeNav.addEventListener(
+        "click",
+        function (e) {
+
+            e.preventDefault();
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+    );
+
+}
+
 
 });
