@@ -68,25 +68,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
         animateNumber(
             "proteinValue",
-            20.150,
+            23,6,
             1000
         );
 
         animateNumber(
             "fatValue",
-            14.153,
+            15,5,
             1000
         );
 
         animateNumber(
             "carbohydrateValue",
-            68.414,
+            69,2,
             1200
         );
 
         animateNumber(
             "fiberValue",
-            5.962,
+            2,7,
             800
         );
 
