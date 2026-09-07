@@ -50,14 +50,15 @@ const menuData = {
 
 
         progress: {
+           energi: 100,
 
-            protein: 48,
+            protein: 100,
 
-            lemak: 38,
+            lemak: 100,
 
-            karbohidrat: 72,
+            karbohidrat: 100,
 
-            serat: 32
+            serat: 100
 
         }
 
@@ -89,14 +90,15 @@ const menuData = {
 
 
         progress: {
+           energi: 100,
 
-            protein: 60,
+            protein: 100,
 
-            lemak: 52,
+            lemak: 100,
 
-            karbohidrat: 88,
+            karbohidrat: 100,
 
-            serat: 42
+            serat: 100
 
         }
 
