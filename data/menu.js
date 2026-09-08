@@ -28,7 +28,7 @@ const menuData = {
     kecil: {
 
         foto:
-            "assets/images/menu/07092026.png",
+            "assets/images/menu/08092026-kecil.jpeg",
 
         menu:
             "Nasi, Ayam Pepes Kemangi, Capcay, Tempe Crispy, Buah Naga",
@@ -68,7 +68,7 @@ const menuData = {
     besar: {
 
         foto:
-            "assets/images/menu/07092026.png",
+            "assets/images/menu/08092026-besar.jpeg",
 
         menu:
             "Nasi, Ayam Pepes Kemangi, Capcay, Tempe Crispy, Buah Naga",
