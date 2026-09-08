@@ -46,7 +46,7 @@ const menuData = {
             "53,055",
 
         serat:
-            "3,719,
+            "3,719",
 
 
         progress: {
