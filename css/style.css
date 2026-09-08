@@ -731,22 +731,21 @@ position: relative;
 }
 
 .menu-image-card
+.food-image-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 16px;
+    position: relative;
+    background: #eaf6fa;
+}
+
 .food-image-wrapper img {
-
-
-width: 100%;
-height: 100%;
-
-display: block;
-
-object-fit: cover;
-
-transition:
-    transform
-    0.5s
-    ease;
-
-
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    object-position: center;
 }
 
 .menu-image-card:hover
