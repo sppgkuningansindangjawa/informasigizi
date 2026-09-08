@@ -34,7 +34,7 @@ const menuData = {
             "Nasi, Sate Ayam, Lalapan Timun, Tahu Goreng, Jeruk",
 
         energi:
-            "526",
+            526,
 
         protein:
             "18,027",
@@ -74,7 +74,7 @@ const menuData = {
             "Nasi, Sate Ayam, Lalapan Timun, Tahu Goreng, Jeruk",
 
         energi:
-            "644",
+            644,
 
         protein:
             "24,920",
