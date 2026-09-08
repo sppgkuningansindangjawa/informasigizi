@@ -22,7 +22,7 @@ const menuData = {
 
 "08092026": {
 
-    tanggal: "08 September 2026",
+    tanggal: "09 September 2026",
 
 
     kecil: {
@@ -31,22 +31,22 @@ const menuData = {
             "assets/images/menu/08092026-kecil.jpeg",
 
         menu:
-            "Nasi, Ayam Pepes Kemangi, Capcay, Tempe Crispy, Buah Naga",
+            "Nasi, Sate Ayam, Lalapan Timun, Tahu Goreng, Jeruk",
 
         energi:
-            400,
+            "526",
 
         protein:
-            "17,213",
+            "18,027",
 
         lemak:
-            "14,077",
+            "16,620",
 
         karbohidrat:
-            "55,966",
+            "53,055",
 
         serat:
-            "4,222",
+            "3,719,
 
 
         progress: {
@@ -71,22 +71,22 @@ const menuData = {
             "assets/images/menu/08092026-besar.jpeg",
 
         menu:
-            "Nasi, Ayam Pepes Kemangi, Capcay, Tempe Crispy, Buah Naga",
+            "Nasi, Sate Ayam, Lalapan Timun, Tahu Goreng, Jeruk",
 
         energi:
-            615,
+            "644",
 
         protein:
-            "24,557",
+            "24,920",
 
         lemak:
-            "16,342",
+            "15,874",
 
         karbohidrat:
-            "78,980",
+            "73,564",
 
         serat:
-            "5,156",
+            "3,070",
 
 
         progress: {
