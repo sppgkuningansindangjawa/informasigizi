@@ -8,6 +8,7 @@
    * Animasi angka kandungan gizi
    * Animasi progress bar
    * Animasi logo BGN saat halaman di-refresh
+   * Alert 
 
    Catatan:
    * Tidak membaca menu.js
@@ -349,4 +350,59 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 });
+
+// =========================
+    // ALERT INFORMASI MAKANAN
+    // =========================
+
+    const foodAlert = document.getElementById("foodAlert");
+    const closeAlert = document.getElementById("closeAlert");
+    const understandAlert = document.getElementById("understandAlert");
+
+
+    // Tampilkan otomatis ketika halaman dibuka
+    window.addEventListener("load", function () {
+
+        setTimeout(function () {
+
+            foodAlert.classList.add("show");
+
+        }, 500);
+
+    });
+
+
+    // Tutup alert
+    function hideFoodAlert() {
+
+        foodAlert.classList.remove("show");
+
+    }
+
+
+    closeAlert.addEventListener(
+        "click",
+        hideFoodAlert
+    );
+
+
+    understandAlert.addEventListener(
+        "click",
+        hideFoodAlert
+    );
+
+
+    // Klik area luar popup untuk menutup
+    foodAlert.addEventListener(
+        "click",
+        function (e) {
+
+            if (e.target === foodAlert) {
+
+                hideFoodAlert();
+
+            }
+
+        }
+    );
 
